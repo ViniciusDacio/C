@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1648564411 source:c:\users\vinic\documents\git\c\estatistica\main.c
+	"mod_lista_encadeada.h"
+
+1648564561 c:\users\vinic\documents\git\c\estatistica\mod_lista_encadeada.h
+
+1610912006 source:c:\users\vinic\documents\git\c\estatistica\mod_lista_encadeada.c
+	"mod_lista_encadeada.h"
+
