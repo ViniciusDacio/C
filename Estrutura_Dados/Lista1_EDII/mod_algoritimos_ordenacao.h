@@ -3,7 +3,7 @@
 
 void imprime_lista(int v[], int tam);
 
-void bubble_sort (int vetor[], int n);
+void bubble_sort(int vetor[], int n);
 
 void selection_sort(int vetor[], int n);
 

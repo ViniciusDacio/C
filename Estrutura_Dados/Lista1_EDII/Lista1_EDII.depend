@@ -3,21 +3,21 @@
 	<stdio.h>
 	<stdlib.h>
 
-1651866302 source:c:\users\vinic\documents\git\c\estrutura_dados\lista1_edii\main.c
-	"mod_lista1.h"
-	"mod_algoritimos_ordenacao.h"
-
-1651864321 source:c:\users\vinic\documents\git\c\estrutura_dados\lista1_edii\mod_lista1.c
+1651868565 source:c:\users\vinic\documents\git\c\estrutura_dados\lista1_edii\main.c
 	"mod_lista1.h"
 
-1651864341 c:\users\vinic\documents\git\c\estrutura_dados\lista1_edii\mod_lista1.h
+1651868607 source:c:\users\vinic\documents\git\c\estrutura_dados\lista1_edii\mod_lista1.c
+	"mod_lista1.h"
+
+1651868558 c:\users\vinic\documents\git\c\estrutura_dados\lista1_edii\mod_lista1.h
 	<stdio.h>
 	<stdlib.h>
+	"mod_algoritimos_ordenacao.h"
 
 1651866164 source:c:\users\vinic\documents\git\c\estrutura_dados\lista1_edii\mod_algoritimos_ordenacao.c
 	"mod_algoritimos_ordenacao.h"
 
-1651866182 c:\users\vinic\documents\git\c\estrutura_dados\lista1_edii\mod_algoritimos_ordenacao.h
+1651868697 c:\users\vinic\documents\git\c\estrutura_dados\lista1_edii\mod_algoritimos_ordenacao.h
 	<stdio.h>
 	<stdlib.h>
 

@@ -19,3 +19,43 @@ void senha_fixa(int *n){
         senha_fixa(n);
     }
 }
+
+void fase(){
+    int n, k;
+    printf("Numero de competidores: ");
+    scanf("%d", &n);
+    printf("Classificados: ");
+    scanf("%d",&k);
+    if(k > n){
+        while(k > n){
+            printf("Dica: O numero de classificados nao pode ser maior que o de candidatos: ");
+            scanf("%d",&k);
+        }
+    }
+
+    printf("Digite a nota dos %d competidores:\n", n);
+    int v[n];
+    for(int i = 0; i < n; i++){
+        scanf("%d", &v[i]);
+    }
+
+    void bubble_sort(v, n);
+    imprime_lista(v, n);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
