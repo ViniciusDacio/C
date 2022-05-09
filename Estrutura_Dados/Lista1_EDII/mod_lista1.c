@@ -21,11 +21,14 @@ void senha_fixa(int *n){
 }
 
 void fase(){
+    //n = competidores
+    //k = classificados
     int n, k;
     printf("Numero de competidores: ");
     scanf("%d", &n);
     printf("Classificados: ");
     scanf("%d",&k);
+
     if(k > n){
         while(k > n){
             printf("Dica: O numero de classificados nao pode ser maior que o de candidatos: ");
@@ -33,14 +36,28 @@ void fase(){
         }
     }
 
-    printf("Digite a nota dos %d competidores:\n", n);
     int v[n];
     for(int i = 0; i < n; i++){
+        printf("Digite a nota do %d competidor:\n", i+1);
         scanf("%d", &v[i]);
+        if(v[i] <= 1 || v[i] >= 1000){
+            printf("A nota deve ser entre 1 e 1000!\n");
+            i--;
+        }
     }
-
-    void bubble_sort(v, n);
+    bubble_sort(v, n);
     imprime_lista(v, n);
+
+    printf("\n");
+
+    int sum = 0;
+    for(int i=n; i>0; i--){
+        if(sum >= k && v[i] > v[i-1]){
+            break;
+        }
+        sum++;
+    }
+    printf("Soma: %d\n",sum);
 }
 
 
