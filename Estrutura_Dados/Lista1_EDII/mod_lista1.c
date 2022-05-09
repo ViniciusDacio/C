@@ -29,25 +29,22 @@ void fase(){
     printf("Classificados: ");
     scanf("%d",&k);
 
-    if(k > n){
-        while(k > n){
-            printf("Dica: O numero de classificados nao pode ser maior que o de candidatos: ");
-            scanf("%d",&k);
-        }
+    while(k > n || k < 1){
+        printf("Dica: O numero de classificados nao pode ser maior que o de candidatos ou menor que Zero: ");
+        scanf("%d",&k);
     }
 
     int v[n];
     for(int i = 0; i < n; i++){
         printf("Digite a nota do %d competidor:\n", i+1);
         scanf("%d", &v[i]);
-        if(v[i] <= 1 || v[i] >= 1000){
+        if(v[i] < 1 || v[i] > 1000){
             printf("A nota deve ser entre 1 e 1000!\n");
             i--;
         }
     }
     bubble_sort(v, n);
     imprime_lista(v, n);
-
     printf("\n");
 
     int sum = 0;
