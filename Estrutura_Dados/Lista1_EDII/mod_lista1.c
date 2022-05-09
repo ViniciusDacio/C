@@ -26,6 +26,10 @@ void fase(){
     int n, k;
     printf("Numero de competidores: ");
     scanf("%d", &n);
+    while(n < 1 || n > 1000){
+        printf("Digite um numero entre 1 e 1000: ");
+        scanf("%d",&n);
+    }
     printf("Classificados: ");
     scanf("%d",&k);
 
@@ -43,7 +47,7 @@ void fase(){
             i--;
         }
     }
-    bubble_sort(v, n);
+    quicksort(v, 0, n);
     imprime_lista(v, n);
     printf("\n");
 
@@ -54,7 +58,7 @@ void fase(){
         }
         sum++;
     }
-    printf("Soma: %d\n",sum);
+    printf("Classificados: %d\n",sum);
 }
 
 
