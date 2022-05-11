@@ -3,7 +3,7 @@
 
 int main(){
 
-    fase();
+    grid();
 
     return 0;
 }

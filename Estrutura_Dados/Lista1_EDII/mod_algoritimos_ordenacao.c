@@ -6,8 +6,9 @@ void imprime_lista(int v[], int tam){
         printf("%d ", v[i]);
 }
 
-void bubble_sort (int vetor[], int n) {
+int bubble_sort(int vetor[], int n) {
     int k, j, aux;
+    int cont = 0;
 
     for (k = 1; k < n; k++) {
         for (j = 0; j < n - 1; j++) {
@@ -16,9 +17,11 @@ void bubble_sort (int vetor[], int n) {
                 aux          = vetor[j];
                 vetor[j]     = vetor[j + 1];
                 vetor[j + 1] = aux;
+                cont++;
             }
         }
     }
+    return cont;
 }
 
 void selection_sort(int vetor[], int n) {

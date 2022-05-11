@@ -61,6 +61,53 @@ void fase(){
     printf("Classificados: %d\n",sum);
 }
 
+void grid(){
+    int largada[24];
+    int chegada[24];
+
+    int n, i;
+
+    printf("Numero de competidores: ");
+    while(scanf("%d", &n) != EOF){
+        for(i=0; i<n; i++){
+            printf("Digite o numero dos competidores: ");
+            scanf("%d",&largada[i]);
+
+            while(largada[i] < 1 || largada[i] > 24){
+            printf("Numero entre 1 e 24: ");
+            scanf("%d",&largada[i]);
+            }
+
+        }for(i=0; i<n; i++){
+            printf("Digite as posicoes de chegada: ");
+            scanf("%d",&chegada[i]);
+
+            while(chegada[i] < 1 || chegada[i] > 24){
+            printf("Numero entre 1 e 24: ");
+            scanf("%d",&chegada[i]);
+            }
+        }
+        imprime_lista(largada, n); printf("\n");
+        imprime_lista(chegada, n); printf("\n");
+
+        int i, j, cont, aux;
+        int v[24];
+
+        for(i=0; i <n; i++){
+            for(j=0; j<n; j++){
+                if(largada[i] == chegada[j]){
+                    v[i] = j;
+                    break;
+                }
+            }
+        }
+        imprime_lista(v,n);
+        int ordem = bubble_sort(v, n);
+        printf("\n%d",ordem);
+    }
+}
+
+
 
 
 
