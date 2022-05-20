@@ -1,11 +1,5 @@
 # depslib dependency file v1.0
-1652132899 source:c:\users\vinic\onedrive\documents\git\c\estrutura_dados\lista1_edii\main.c
-	"mod_lista1.h"
-
-1652472125 source:c:\users\vinic\documents\git\c\estrutura_dados\lista1_edii\main.c
-	"mod_lista1.h"
-
-1652990317 source:c:\users\vinic\documents\git\c\estrutura_dados\lista1_edii\mod_lista1.c
+1653062455 source:c:\users\vinic\documents\git\c\estrutura_dados\lista1_edii\main.c
 	"mod_lista1.h"
 
 1653057256 c:\users\vinic\documents\git\c\estrutura_dados\lista1_edii\mod_lista1.h
@@ -13,32 +7,13 @@
 	<stdlib.h>
 	"mod_algoritimos_ordenacao.h"
 
-1652274803 source:c:\users\vinic\documents\git\c\estrutura_dados\lista1_edii\mod_algoritimos_ordenacao.c
-	"mod_algoritimos_ordenacao.h"
-
-1652274853 c:\users\vinic\documents\git\c\estrutura_dados\lista1_edii\mod_algoritimos_ordenacao.h
+1653062185 c:\users\vinic\documents\git\c\estrutura_dados\lista1_edii\mod_algoritimos_ordenacao.h
 	<stdio.h>
 	<stdlib.h>
 
-1652124844 source:c:\users\vinic\onedrive\documents\git\c\estrutura_dados\lista1_edii\mod_algoritimos_ordenacao.c
+1653062610 source:c:\users\vinic\documents\git\c\estrutura_dados\lista1_edii\mod_algoritimos_ordenacao.c
 	"mod_algoritimos_ordenacao.h"
 
-1652125067 c:\users\vinic\onedrive\documents\git\c\estrutura_dados\lista1_edii\mod_algoritimos_ordenacao.h
-	<stdio.h>
-	<stdlib.h>
-
-1652135842 source:c:\users\vinic\onedrive\documents\git\c\estrutura_dados\lista1_edii\mod_lista1.c
+1653077685 source:c:\users\vinic\documents\git\c\estrutura_dados\lista1_edii\mod_lista1.c
 	"mod_lista1.h"
-
-1652125742 c:\users\vinic\onedrive\documents\git\c\estrutura_dados\lista1_edii\mod_lista1.h
-	<stdio.h>
-	<stdlib.h>
-	"mod_algoritimos_ordenacao.h"
-
-1615684396 c:\users\vinic\documents\git\c\estrutura_dados\lista1_edii\mod_arvore.h
-	<stdio.h>
-	<stdlib.h>
-
-1615827854 source:c:\users\vinic\documents\git\c\estrutura_dados\lista1_edii\mod_arvore.c
-	"mod_arvore.h"
 

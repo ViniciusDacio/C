@@ -125,3 +125,64 @@ void quicksort(int vetor[], int comeco, int fim){
     if(i < fim)
         quicksort(vetor, i, fim);
 }
+
+//-------------------- Grafos --------------------//
+
+tipo_grafo *criaGrafo(int nVert){
+
+    int i, j;
+
+    tipo_grafo *G = malloc(sizeof(tipo_grafo));
+    G->numVertice = nVert;
+
+    G->matriz_adj = (int**) malloc(nVert*sizeof(int *));
+
+    for (i = 0; i < nVert; i++)
+        G->matriz_adj[i] = (int *) malloc(nVert*sizeof(int));
+
+    for (i = 0; i < nVert; i++)
+        for (j = 0; j < nVert; j++)
+            G->matriz_adj[i][j] = 0;
+
+    return G;
+}
+
+void addAresta(tipo_grafo *G, int origem, int destino){
+    G->matriz_adj[origem][destino] = 1;
+    G->matriz_adj[destino][origem] = 1;
+}
+
+void removeAresta(tipo_grafo *G, int origem, int destino){
+    G->matriz_adj[origem][destino] = 0;
+    G->matriz_adj[destino][origem] = 0;
+}
+
+void mostra_grafo(tipo_grafo *G){
+    int i, j;
+
+    printf("\n Mostrando a matriz de adj do grafo\n   ");
+
+    for (i = 0; i< G->numVertice; i++)
+        printf("%d ", i);
+    printf("\n");
+
+    for (i = 0; i< G->numVertice; i++){
+        printf("%d ", i);
+        for (j = 0; j< G->numVertice; j++)
+            printf(" %d", G->matriz_adj[i][j]);
+
+        printf("\n");
+    }
+}
+
+tipo_grafo *liberaGrafo(tipo_grafo *G){
+    if (G){
+        for (int i = 0; i < G->numVertice; i++)
+            free(G->matriz_adj[i]);
+        free(G->matriz_adj);
+
+        free(G);
+    }
+    return NULL;
+}
+
