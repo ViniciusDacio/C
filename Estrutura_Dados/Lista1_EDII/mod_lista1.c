@@ -1,4 +1,5 @@
 #include "mod_lista1.h"
+//Vinicius Dacio
 
 void tabuada(int num, int i){
     if(i > 10)
@@ -105,6 +106,34 @@ void grid(){
         int ordem = bubble_sort(v, n);
         printf("\n%d",ordem);
     }
+}
+
+void cordao_led(){
+    int vertices, arestas;
+    /*
+    printf("Numero de segmentos: ");
+    scanf("%d", &vertices);
+    printf("Numero de ligacoes: ");
+    scanf("%d", &arestas);
+
+    int v1[arestas], v2[arestas];
+
+    printf("Digite as ligacoes: \n");
+
+    for(int i=0; i<arestas; i++){
+        scanf("%d-%d", &v1[i], &v2[i]);
+    }
+    */
+    vertices = 4;
+    arestas = 3;
+    int v1[3] = {1,1,2};
+    int v2[3] = {2,3,4};
+    imprime_lista(v1, arestas);
+    printf("\n");
+    imprime_lista(v2, arestas);
+
+    printf("\n");
+
 }
 
 
