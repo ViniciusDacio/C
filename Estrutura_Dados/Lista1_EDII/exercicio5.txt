@@ -1,0 +1,150 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct grafo{
+    int numVertice;
+    int **matriz_adj;
+
+}tipo_grafo;
+
+tipo_grafo *criaGrafo(int nVert){
+
+    int i, j;
+
+    tipo_grafo *G = malloc(sizeof(tipo_grafo));
+    G->numVertice = nVert;
+
+    G->matriz_adj = (int**) malloc(nVert*sizeof(int *));
+
+    for (i = 0; i < nVert; i++)
+        G->matriz_adj[i] = (int *) malloc(nVert*sizeof(int));
+
+    for (i = 0; i < nVert; i++)
+        for (j = 0; j < nVert; j++)
+            G->matriz_adj[i][j] = 0;
+
+    return G;
+}
+void imprime_lista(int v[], int tam){
+
+    for(int i = 0; i < tam; i++)
+        printf("%d ", v[i]);
+}
+
+void addAresta(tipo_grafo *G, int origem, int destino){
+    G->matriz_adj[origem][destino] = 1;
+    G->matriz_adj[destino][origem] = 1;
+}
+
+void removeAresta(tipo_grafo *G, int origem, int destino){
+    G->matriz_adj[origem][destino] = 0;
+    G->matriz_adj[destino][origem] = 0;
+}
+
+void mostra_grafo(tipo_grafo *G){
+    int i, j;
+
+    printf("\n Mostrando a matriz de adj do grafo\n   ");
+
+    for (i = 0; i< G->numVertice; i++)
+        printf("%d ", i);
+    printf("\n");
+
+    for (i = 0; i< G->numVertice; i++){
+        printf("%d ", i);
+        for (j = 0; j< G->numVertice; j++)
+            printf(" %d", G->matriz_adj[i][j]);
+
+        printf("\n");
+    }
+}
+
+tipo_grafo *liberaGrafo(tipo_grafo *G){
+    if (G){
+        for (int i = 0; i < G->numVertice; i++)
+            free(G->matriz_adj[i]);
+        free(G->matriz_adj);
+
+        free(G);
+    }
+    return NULL;
+}
+void verifica_elemento(tipo_grafo *G, int linha, int v[], int cor[], int posicao, int vertices){
+    int cont = posicao;
+    if(cor[linha] == 0)
+        return;
+    for(int i=0; i<vertices; i++){
+        if(G->matriz_adj[linha][i] == 1){
+            v[cont] = i;
+            cont++;
+        }
+    }
+    cor[linha] = 0;
+}
+
+void popula(int v[], int tam, int valor){
+    for(int i=0; i<tam;i++){
+        v[i] = valor;
+    }
+}
+
+void cordao_led(){
+    int vertices, arestas;
+    /*
+    printf("Numero de segmentos: ");
+    scanf("%d", &vertices);
+    printf("Numero de ligacoes: ");
+    scanf("%d", &arestas);
+    */
+    vertices = 4;
+    arestas = 3;
+
+    tipo_grafo *G = criaGrafo(vertices);
+
+    printf("Digite as ligacoes: \n");
+
+    for(int i=0; i<arestas; i++){
+        int j, k;
+        scanf("%d-%d", &j, &k);
+        addAresta(G, j-1, k-1);
+    }
+
+    int cor[vertices];
+    int v[10];
+    popula(v,10,0);
+    popula(cor, vertices,1);
+    
+    int inicio = 0;
+    int del_elem = 1, l=0;
+
+    do{
+        verifica_elemento(G, v[l], v, cor, del_elem, vertices);
+        l++;
+        int it = del_elem;
+        while(it < 10){
+            if(v[it] == 0){
+                del_elem = it;
+                break;
+            }
+            it++;
+        }
+        
+    }while(v[l] != 0);
+
+    printf("----------");
+    imprime_lista(cor, vertices);
+    printf("----------");
+    mostra_grafo(G);
+
+    G = liberaGrafo(G);
+
+    printf("\n");
+
+}
+
+int main(){
+
+    cordao_led();
+
+    return 0;
+}
