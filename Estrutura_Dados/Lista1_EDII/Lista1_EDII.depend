@@ -17,3 +17,21 @@
 1653508407 source:c:\users\vinic\documents\git\c\estrutura_dados\lista1_edii\mod_lista1.c
 	"mod_lista1.h"
 
+1653083863 source:c:\users\vinic\onedrive\documents\git\c\estrutura_dados\lista1_edii\main.c
+	"mod_lista1.h"
+
+1653083863 c:\users\vinic\onedrive\documents\git\c\estrutura_dados\lista1_edii\mod_lista1.h
+	<stdio.h>
+	<stdlib.h>
+	"mod_algoritimos_ordenacao.h"
+
+1653083863 c:\users\vinic\onedrive\documents\git\c\estrutura_dados\lista1_edii\mod_algoritimos_ordenacao.h
+	<stdio.h>
+	<stdlib.h>
+
+1653083863 source:c:\users\vinic\onedrive\documents\git\c\estrutura_dados\lista1_edii\mod_algoritimos_ordenacao.c
+	"mod_algoritimos_ordenacao.h"
+
+1653086934 source:c:\users\vinic\onedrive\documents\git\c\estrutura_dados\lista1_edii\mod_lista1.c
+	"mod_lista1.h"
+
