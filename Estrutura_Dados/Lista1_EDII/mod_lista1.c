@@ -110,14 +110,22 @@ void grid(){
 
 void verifica_elemento(tipo_grafo *G, int linha, int v[], int cor[], int posicao, int vertices){
     int cont = posicao;
+    int li = linha-1;
     for(int i=0; i<vertices; i++){
-        if(G->matriz_adj[linha][i] == 1 && cor[i] == 1){
-            v[cont] = i;
+        if(G->matriz_adj[li][i] == 1 && cor[i] == 1){
+            v[cont] = i+1;
             cont++;
         }
     }
-    cor[linha] = 0;
+    cor[li] = 0;
 }
+
+void popula(int v[], int tam, int valor){
+    for(int i=0; i<tam;i++){
+        v[i] = valor;
+    }
+}
+
 
 void cordao_led(){
     int vertices, arestas;
@@ -136,33 +144,26 @@ void cordao_led(){
         scanf("%d-%d", &j, &k);
         addAresta(G, j-1, k-1);
     }
+    int cor[vertices], v[vertices];
+    popula(v,vertices,0);
+    popula(cor, vertices,1);
 
-    int fila[100], cor[vertices];
-
-    int v[100];
-    for(int i=0; i<100; i++){
-        fila[i] = i+1;
-        cor[i] = 1;
-        v[i] = 0;
-    }
-    int inicio = 0, fim = fila[1];
-
-
-    int del_elem = 0, l=0;
+    int del_elem = 1, l=0;
+    v[0] = 1;
 
     do{
         verifica_elemento(G, v[l], v, cor, del_elem, vertices);
-
-        int it = 0;
-        while(it < 100){
+        l++;
+        int it = del_elem;
+        while(it < vertices){
             if(v[it] == 0){
-                del_elem = it-1;
+                del_elem = it;
                 break;
             }
             it++;
-            l++;
         }
-    }while(v[l] == 0);
+
+    }while(v[l] != 0);
 
     printf("----------");
     imprime_lista(cor, vertices);
