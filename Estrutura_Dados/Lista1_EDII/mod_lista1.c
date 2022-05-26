@@ -126,6 +126,13 @@ void popula(int v[], int tam, int valor){
     }
 }
 
+int verifica_num(int v[], int tam, int num){
+    for(int i=0;i<tam; i++){
+        if(v[i] == num)
+            return 1;
+    }
+    return 0;
+}
 
 void cordao_led(){
     int vertices, arestas;
@@ -141,34 +148,33 @@ void cordao_led(){
 
     for(int i=0; i<arestas; i++){
         int j, k;
-        scanf("%d-%d", &j, &k);
+        scanf("%d %d", &j, &k);
         addAresta(G, j-1, k-1);
     }
-    int cor[vertices], v[vertices];
-    popula(v,vertices,0);
+    int cor[vertices], fila[vertices];
+    popula(fila,vertices,0);
     popula(cor, vertices,1);
 
-    int del_elem = 1, l=0;
-    v[0] = 1;
+    int del_elem = 1, posicao=0;
+    fila[0] = 1;
 
-    do{
-        verifica_elemento(G, v[l], v, cor, del_elem, vertices);
-        l++;
-        int it = del_elem;
-        while(it < vertices){
-            if(v[it] == 0){
-                del_elem = it;
+    while(fila[posicao] != 0){
+        verifica_elemento(G, fila[posicao], fila, cor, del_elem, vertices);
+        posicao++;
+
+        while(del_elem < vertices){
+            if(fila[del_elem] == 0){
                 break;
             }
-            it++;
+            del_elem++;
         }
+    }
 
-    }while(v[l] != 0);
-
-    printf("----------");
+    printf("---------------\n");
     imprime_lista(cor, vertices);
-    printf("----------");
+    printf("\n---------------\n");
     mostra_grafo(G);
+    int var = verifica_num(cor, vertices, 1) == 1 ? printf("\nINCOMPLETO\n") : printf("\nCOMPLETO\n");
 
     G = liberaGrafo(G);
 
